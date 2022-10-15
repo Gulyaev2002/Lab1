@@ -1,36 +1,64 @@
-# This is a basic workflow to help you get started with Actions
 
-name: CI
+    internal class Example
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите a --> ");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите b --> ");
+            int b = Convert.ToInt32(Console.ReadLine());
+            int d = a;
+            int c = b;
+            int g = 0;
+            while ((d != 0) && (c != 0))
+            {
+                d /= 10;
+                c /= 10;
+                g++;
+            }
+            int[] mas = new int[g];
+            int[] mas1 = new int[g];
+            for (int j = 0; j < mas.Length; j++)
+            {
+                while (a != 0)
+                {
+                    mas[j] = a % 10;
+                    a /= 10;
+                }
+            }
+            for (int l = 0; l < mas1.Length; l++)
+            {
+                while (b != 0)
+                {
+                    mas[l] = b % 10;
+                    b /= 10;
+                }
+            }
+            for (int j = 0; j < mas.Length; j++)
+            {
+                for (int l = 0; l < mas1.Length; l++)
+                {
+                    if (j == l)
+                    {
+                        int index = l;
 
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+                        for (int i = index; i < mas1.Length - 1; i++)
+                        {
+                            mas1[i] = mas1[i + 1];
+                        }
+                        Array.Resize(ref mas1, mas1.Length - 1);
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+                        Console.WriteLine(String.Join(", ", mas1));
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+                    }
+                }
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+            }
+               
+
+        }   
+    }
+    
+}
