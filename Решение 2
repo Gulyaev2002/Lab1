@@ -21,19 +21,9 @@ namespace _2_решение
             int lenb = b.Length;
             char[] simva = a.ToCharArray();
             char[] simvb = b.ToCharArray();
-            int g = 0;
             int q = 0;
-            int t = 0;
-            for (int j = 0; j < a.Length; j++)
+            if (lena ==lenb )
             {
-          
-            }
-
-                if (lena ==lenb )
-            {
-                
-                int[] ww = new int[] { 6, 7, 8 };
-                Console.WriteLine(("[{0}]", string.Join(", ", simva)) + " " + ("[{1}]", string.Join(", ", simvb)));
                 for (int j = 0; j < lena; j++)
                 {
                     for (int l = 0; l < lenb; l++)
@@ -54,8 +44,6 @@ namespace _2_решение
 
                 if (q == a.Length)
                 {
-
-
                     Console.WriteLine("Одинаковые");
                 }
                 else
