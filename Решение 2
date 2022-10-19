@@ -1,4 +1,76 @@
-Console.WriteLine("Введите a --> ");
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Reflection;
+
+namespace _2_решение
+{
+    internal class Example
+    {
+        static void Main(string[] args)
+        {
+            //f1();
+            f2();
+        }
+        static void f2()
+        {
+            Console.WriteLine("Введите первую строку --> ");
+            string a = Console.ReadLine();
+            Console.WriteLine("Введите вторую строку --> ");
+            string b = Console.ReadLine();
+            int lena = a.Length;
+            int lenb = b.Length;
+            char[] simva = a.ToCharArray();
+            char[] simvb = b.ToCharArray();
+            int g = 0;
+            int q = 0;
+            int t = 0;
+            for (int j = 0; j < a.Length; j++)
+            {
+          
+            }
+
+                if (lena ==lenb )
+            {
+                
+                int[] ww = new int[] { 6, 7, 8 };
+                Console.WriteLine(("[{0}]", string.Join(", ", simva)) + " " + ("[{1}]", string.Join(", ", simvb)));
+                for (int j = 0; j < lena; j++)
+                {
+                    for (int l = 0; l < lenb; l++)
+                    {
+                        Console.WriteLine("Сравниваю: " + Convert.ToString(simva[j]) + " " + Convert.ToString(simvb[l]));
+                        if (simva[j] == simvb[l])
+                        {
+                            simvb = simvb.Where((val, idx) => l != idx).ToArray();
+                            q++;
+                            break;
+
+
+                        }
+
+                    }
+
+                }
+
+                if (q == a.Length)
+                {
+
+
+                    Console.WriteLine("Одинаковые");
+                }
+                else
+                {
+                    Console.WriteLine("Не могут сравниваться, т.к имееют разное количество одинаковых символов");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Не могут сравниваться, т.к имееют разное количество символов");
+            }
+        }
+        static void f1()
+        {
+            Console.WriteLine("Введите a --> ");
             int a = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите b --> ");
             int b = Convert.ToInt32(Console.ReadLine());
@@ -40,7 +112,7 @@ Console.WriteLine("Введите a --> ");
                     }
                 }
                 int[] ww = new int[] { 6, 7, 8 };
-                Console.WriteLine(("[{0}]", string.Join(", ", mas))+" "+ ("[{1}]", string.Join(", ", mas1)));
+                Console.WriteLine(("[{0}]", string.Join(", ", mas)) + " " + ("[{1}]", string.Join(", ", mas1)));
                 for (int j = 0; j < mas.Length; j++)
                 {
                     for (int l = 0; l < mas1.Length; l++)
@@ -48,17 +120,17 @@ Console.WriteLine("Введите a --> ");
                         Console.WriteLine("Сравниваю: " + Convert.ToString(mas[j]) + " " + Convert.ToString(mas1[l]));
                         if (mas[j] == mas1[l])
                         {
-                            int m = l-1;
-                            int numToRemove = m;
-                            int numIndex = Array.IndexOf(mas1, numToRemove);
-                            mas1 = mas1.Where((val, idx) => idx != numIndex).ToArray();
+                            mas1 = mas1.Where((val, idx) => l != idx).ToArray();
                             q++;
-                            
+                            break;
+
+
                         }
 
                     }
-                    
+
                 }
+
                 if (q == mas.Length)
                 {
 
@@ -74,8 +146,7 @@ Console.WriteLine("Введите a --> ");
             {
                 Console.WriteLine("Не могут сравниваться, т.к имееют разное количество цифр");
             }
-
-        }   
+        }
     }
     
 }
