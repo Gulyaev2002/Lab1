@@ -11,7 +11,7 @@ namespace _6__Гуляев_Александр
         {
             bool flag = true;
             int count = 0;
-            int N = 7;
+            int N = 50;
             int[] mas = new int[N];
             Random rnd = new Random();
             for (int i = 0; i < mas.Length; i++)
@@ -31,14 +31,14 @@ namespace _6__Гуляев_Александр
         static void f2()
         {
             int count = 0;
-            int N = 7;
+            int N = 20;
             int L = 0;
             int R = N;
             int[] mas = new int[N];
             Random rnd = new Random();
             for (int i = 0; i < mas.Length; i++)
             {
-                mas[i] = rnd.Next(0, 10);
+                mas[i] = rnd.Next(0, 5);
                 Console.Write(mas[i] + "\t");
             }
             for (int i = 0; i < N; i++)
@@ -59,6 +59,7 @@ namespace _6__Гуляев_Александр
                     mas[nMin] = y;
                 }
             }
+            Console.WriteLine("[{0}]", string.Join(", ", mas));
             Console.WriteLine();
             Console.WriteLine("Введите число\n");
             int p = Convert.ToInt32(Console.ReadLine());
