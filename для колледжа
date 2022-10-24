@@ -11,12 +11,12 @@ namespace _6__Гуляев_Александр
         {
             bool flag = true;
             int count = 0;
-            int N = 50;
+            int N = 40;
             int[] mas = new int[N];
             Random rnd = new Random();
             for (int i = 0; i < mas.Length; i++)
             {
-                mas[i] = rnd.Next(0, 5);
+                mas[i] = rnd.Next(-60, 60);
                 Console.WriteLine(mas[i] + "\t");
             }
             Console.WriteLine("Введите число");
@@ -31,14 +31,15 @@ namespace _6__Гуляев_Александр
         static void f2()
         {
             int count = 0;
-            int N = 7;
+            int count1 = 0;
+            int N = 50;
             int L = 0;
             int R = N;
             int[] mas = new int[N];
             Random rnd = new Random();
             for (int i = 0; i < mas.Length; i++)
             {
-                mas[i] = rnd.Next(0, 5);
+                mas[i] = rnd.Next(0, 15);
                 Console.Write(mas[i] + "\t");
             }
             for (int i = 0; i < N; i++)
@@ -50,7 +51,7 @@ namespace _6__Гуляев_Александр
                     {
                         nMin = j; 
                     }
-                    count++;
+                    
                 }
                 if (i != nMin)
                 {
@@ -70,20 +71,22 @@ namespace _6__Гуляев_Александр
                 {
                     R = sred;
                 }
-                else 
+                else
                 {
                     L = sred;
                 }
                 count++;
             }
+
             if (mas[L] == p)
             {
-                Console.WriteLine("Элемент " + p + " найден за " + count + " шагов");
+                Console.WriteLine("Элемент " + mas[L] + " найден за " + count + " шагов");
             }
-            else 
+            else
             {
                 Console.WriteLine("Такого элемента в массиве нет ");
             }
+            
         }
     }
 }
